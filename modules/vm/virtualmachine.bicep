@@ -8,7 +8,7 @@ param adminUserName string
 param adminPassword string
 
 // The URI of the PowerShell Custom Script.
-param virtualMachineExtensionCustomScriptUri string = 'https://raw.githubusercontent.com/aluna033/hello-world/master/DevTools.ps1'
+param virtualMachineExtensionCustomScriptUri string = 'https://raw.githubusercontent.com/aluna033/vm-customscript-bicep/main/script/DevTools.ps1'
 
 resource vmNic 'Microsoft.Network/networkInterfaces@2021-02-01' = {
   name: '${vmName}-nic'
