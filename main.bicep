@@ -1,5 +1,6 @@
 @description('Enter a VM Name')
 param devVmName string
+
 @description('Administrator name for VMs that are created')
 param vmAdminUsername string
 
@@ -12,6 +13,11 @@ param tags object = {
   environment: 'lab'
 }
 
+param vNetName string
+param subnetName string
+param vNetRg string 
+
+
 // Resource location
 param location string = resourceGroup().location
 
@@ -23,11 +29,6 @@ param location string = resourceGroup().location
 ])
 param virtualMachineSize string = 'Standard_D2s_v3'
 
-// Variables
-
-var vNetName = 'arieldemo-hub-vnet'
-var subnetName = 'infra'
-var vNetRg = 'arieldemo-hub-rg'
 
 
 resource vmSubnet 'Microsoft.Network/virtualNetworks/subnets@2021-02-01' existing = {
